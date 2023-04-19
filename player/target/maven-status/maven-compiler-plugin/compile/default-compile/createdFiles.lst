@@ -1,0 +1,5 @@
+com\example\player\PlayerApplication.class
+com\example\player\resources\PlayerResource.class
+com\example\player\entities\Player.class
+com\example\player\entities\PlayerInput.class
+com\example\player\repositories\PlayerRepository.class

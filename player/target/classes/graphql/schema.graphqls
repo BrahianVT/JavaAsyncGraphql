@@ -1,0 +1,36 @@
+
+type Query {
+    getPlayerById(id: ID): Player
+    getPlayerByName(name: String): Player
+    getAllPlayers: [Player]
+    getPlayersByClub(club: String):[Player]
+    getPlayersByNationality(nationality: String):[Player]
+}
+type Mutation {
+    addPlayer(playerInput: PlayerInput!): Player
+    updatePlayer(id: ID, playerInput: PlayerInput!): Player
+    deletePlayerById(id: ID): Player
+    deletePlayerByName(name: String): Player
+}
+
+#Local date implementation by adding dependency
+scalar LocalDate
+type Player {
+    id: ID
+    name: String
+    age: Int
+    club: String
+    nationality: String
+    birthDate: LocalDate
+}
+
+# input to create another player
+
+input PlayerInput {
+    id: ID
+    name: String!
+    age: Int
+    club: String!
+    nationality: String!
+    birthDate: LocalDate
+}
